@@ -1,16 +1,7 @@
-this action is in maintenance-only mode and will not be accepting new features.
+[![Build Status](https://github.com/rhaschke/pre-commit-action/actions/workflows/main.yml/badge.svg)](https://github.com/rhaschke/pre-commit-action/actions)
 
-generally you want to use [pre-commit.ci] which is faster and has more features.
-
-[pre-commit.ci]: https://pre-commit.ci
-
-___
-
-[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/pre-commit/action/main.svg)](https://results.pre-commit.ci/latest/github/pre-commit/action/main)
-[![Build Status](https://github.com/pre-commit/action/actions/workflows/main.yml/badge.svg)](https://github.com/pre-commit/action/actions)
-
-pre-commit/action
-=================
+rhaschke/pre-commit-action
+==========================
 
 a GitHub action to run [pre-commit](https://pre-commit.com)
 
@@ -31,9 +22,8 @@ jobs:
   pre-commit:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v3
-    - uses: pre-commit/action@v3.0.1
+    - uses: actions/checkout@v4
+    - uses: rhaschke/pre-commit-action@main
 ```
 
 This does a few things:
@@ -51,7 +41,7 @@ Here's a sample step configuration that only runs the `flake8` hook against all
 the files (use the template above except for the `pre-commit` action):
 
 ```yaml
-    - uses: pre-commit/action@v3.0.1
+    - uses: rhaschke/pre-commit-action@main
       with:
         extra_args: flake8 --all-files
 ```
